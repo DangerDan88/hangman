@@ -1,18 +1,39 @@
+:root {
+  --mainFont: "DotGothic16", sans-serif;
+  --mainBackground: #262626;
+}
+
+html {
+  background-color: var(--mainBackground);
+}
+
 .contentWidth {
   display: flex;
   justify-content: center;
-  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  font-family: var(--mainFont);
 }
 
 .mainHead {
   font-size: xl-large;
-  color: blue;
+  color: white;
 }
 
 .gameContainer {
   display: flex;
   justify-content: center;
   padding-top: 10rem;
+  padding-bottom: 5rem;
+  color: white;
+  border: 2px dashed white;
+}
+
+.gameInfo {
+  color: white;
+}
+
+.gameInfoContainer {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
 }
