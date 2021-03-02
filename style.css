@@ -5,6 +5,7 @@
 
 html {
   background-color: var(--mainBackground);
+  background-image: url("assets/topography.svg");
 }
 
 .contentWidth {
@@ -17,6 +18,7 @@ html {
 .mainHead {
   font-size: xl-large;
   color: white;
+  padding-bottom: 10rem;
 }
 
 .gameContainer {
@@ -30,10 +32,16 @@ html {
 
 .gameInfo {
   color: white;
+  padding-right: 5rem;
 }
 
 .gameInfoContainer {
   display: flex;
   justify-content: center;
   font-size: larger;
+}
+
+#lettersGuessed {
+  padding-left: 5rem;
+  color: white;
 }

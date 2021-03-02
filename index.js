@@ -1,5 +1,4 @@
 let randomWordsArr = ["javascript", "nodemon", "interpolation"];
-
 let wins = 0;
 let losses = 0;
 let guessesLeft = 10;
@@ -14,3 +13,9 @@ window.onload = function () {
 };
 
 //if letter has already been guessed stop user from using letter again
+document.onkeyup = function (event) {
+  let userGuess = event.key;
+  lettersGuessed.push(userGuess);
+  console.log(userGuess);
+  //console.log(computerGuess[0]);
+};
