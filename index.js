@@ -3,12 +3,12 @@ let wins = 0;
 let losses = 0;
 let guessesLeft = 10;
 let lettersGuessed = [];
-let computerGuess = [];
+let computerGuess = "";
 // Got random word to appear now need to loop over word to render correct amount of dashes fro hangman
 window.onload = function () {
   let compRandomWord =
     randomWordsArr[Math.floor(Math.random() * randomWordsArr.length)];
-  computerGuess.push(compRandomWord);
+  computerGuess = compRandomWord;
   // console.log(computerGuess);
 };
 
@@ -16,12 +16,15 @@ window.onload = function () {
 document.onkeyup = function (event) {
   let userGuess = event.key;
   lettersGuessed.push(userGuess);
-  console.log(userGuess);
+  //console.log(userGuess);
 
   function loopArr() {
-    console.log(computerGuess);
-    // let letterStr = computerGuess.charAt(0);
-    // console.log(letterStr);
+    for (let i = 0; i < computerGuess.length; i++) {
+      // console.log(computerGuess);
+      let letterStr = computerGuess.charAt(i);
+      console.log(letterStr);
+    }
+    // console.log(computerGuess);
     //Loop over computer random guess letters and if statment it over the user guess dont have to loop full array jus the random word
   }
   loopArr();
