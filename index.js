@@ -9,7 +9,7 @@ window.onload = function () {
   let compRandomWord =
     randomWordsArr[Math.floor(Math.random() * randomWordsArr.length)];
   computerGuess = compRandomWord;
-  // console.log(computerGuess);
+  //console.log(computerGuess);
 };
 
 //if letter has already been guessed stop user from using letter again
@@ -20,12 +20,19 @@ document.onkeyup = function (event) {
 
   function loopArr() {
     for (let i = 0; i < computerGuess.length; i++) {
-      // console.log(computerGuess);
-      let letterStr = computerGuess.charAt(i);
+      // console.log(computerGuess[i]);
+      let letterStr = computerGuess.charAt(i).split("");
       console.log(letterStr);
+      if (userGuess === letterStr) {
+        console.log("its a match");
+      } else if (userGuess !== letterStr) {
+        console.log("not a match");
+        guessesLeft -= 1;
+        console.log("guess", guessesLeft);
+      }
     }
     // console.log(computerGuess);
-    //Loop over computer random guess letters and if statment it over the user guess dont have to loop full array jus the random word
+    //need to add logic to update score letters guessed and hangman on right and wrong guess fix else statement logging not a match probably a prolblem with for loop
   }
   loopArr();
 };
