@@ -19,8 +19,14 @@ document.onkeyup = function (event) {
   lettersGuessed.push(userGuess);
   guessesLeft--;
   console.log(guessesLeft);
-  console.log(computerGuess.includes(userGuess));
-
-  console.log(userGuess);
+  if (computerGuess.includes(userGuess) && guessesLeft > 0) {
+    console.log("thats a good guess");
+    correctGuess.push(userGuess);
+    lettersGuessed.push(userGuess);
+  } else if (guessesLeft < 1) {
+    alert("Game is over try again ");
+  } else {
+    console.log("sorry guess better");
+    lettersGuessed.push(userGuess);
+  }
 };
-//TOdO figure out how to check user guess is a match to any letter in the string
