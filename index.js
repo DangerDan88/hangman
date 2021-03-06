@@ -1,6 +1,4 @@
 let randomWordsArr = ["javascript", "nodemon", "interpolation"];
-let wins = 0;
-let losses = 0;
 let guessesLeft = 10;
 let lettersGuessed = [];
 let computerGuess = "";
@@ -23,10 +21,13 @@ document.onkeyup = function (event) {
     console.log("thats a good guess");
     correctGuess.push(userGuess);
     lettersGuessed.push(userGuess);
+    document.querySelector(".gameContainer").innerHTML = correctGuess;
   } else if (guessesLeft < 1) {
     alert("Game is over try again ");
   } else {
     console.log("sorry guess better");
     lettersGuessed.push(userGuess);
   }
+
+  document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
 };
