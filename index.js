@@ -15,19 +15,24 @@ window.onload = function () {
 document.onkeyup = function (event) {
   let userGuess = event.key;
   lettersGuessed.push(userGuess);
-  guessesLeft--;
   console.log(guessesLeft);
   if (computerGuess.includes(userGuess) && guessesLeft > 0) {
     console.log("thats a good guess");
     correctGuess.push(userGuess);
     lettersGuessed.push(userGuess);
+    console.log(correctGuess.join(""));
+    console.log(computerGuess);
     document.querySelector(".gameContainer").innerHTML = correctGuess;
+  } else if (correctGuess === computerGuess) {
+    alert("Thats a win");
   } else if (guessesLeft < 1) {
     alert("Game is over try again ");
   } else {
-    console.log("sorry guess better");
+    guessesLeft--;
     lettersGuessed.push(userGuess);
   }
 
   document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
 };
+
+//TODO figure out to have a user win my comparison isnt working and need to figure out dashes for the hangman
