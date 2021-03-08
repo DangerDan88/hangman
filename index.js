@@ -1,13 +1,13 @@
 let randomWordsArr = ["javascript", "nodemon", "interpolation"];
 let guessesLeft = 10;
 let lettersGuessed = [];
-let computerGuess = "";
+let computerGuess = [];
 let correctGuess = [];
 // Got random word to appear now need to loop over word to render correct amount of dashes fro hangman
 window.onload = function () {
   let compRandomWord =
     randomWordsArr[Math.floor(Math.random() * randomWordsArr.length)];
-  computerGuess = compRandomWord;
+  computerGuess.push(compRandomWord);
   console.log(computerGuess);
 };
 
@@ -20,10 +20,11 @@ document.onkeyup = function (event) {
     console.log("thats a good guess");
     correctGuess.push(userGuess);
     lettersGuessed.push(userGuess);
-    console.log(correctGuess.join(""));
+    //console.log(correctGuess.join(""));
     console.log(computerGuess);
+    console.log(userGuess);
     document.querySelector(".gameContainer").innerHTML = correctGuess;
-  } else if (correctGuess === computerGuess) {
+  } else if (correctGuess == computerGuess) {
     alert("Thats a win");
   } else if (guessesLeft < 1) {
     alert("Game is over try again ");
