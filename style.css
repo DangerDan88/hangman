@@ -41,7 +41,13 @@ html {
   font-size: larger;
 }
 
-#lettersGuessed {
+#lettersGuessed,
+.label {
   padding-left: 5rem;
   color: white;
+}
+
+.correctGuess {
+  color: blueviolet;
+  font-size: larger;
 }
