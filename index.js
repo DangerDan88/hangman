@@ -18,8 +18,15 @@ document.onkeyup = function logUserKey(event) {
   lettersGuessed.push(userKey);
   console.log(lettersGuessed.join(""));
   console.log(computerGuess);
+  guessesLeft--;
   if (lettersGuessed.join("") === computerGuess) {
     console.log("congrats you win");
+  } else if (guessesLeft < 1) {
+    console.log("GameOver");
+  } else if (computerGuess.includes(userKey) && guessesLeft > 0) {
+    console.log("thats a good guess");
+  } else {
+    console.log("nice try guess again");
   }
 
   document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
