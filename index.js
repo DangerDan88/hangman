@@ -16,10 +16,10 @@ let correctGuess = [];
 document.onkeyup = function logUserKey(event) {
   let userKey = event.key;
   lettersGuessed.push(userKey);
-  console.log(lettersGuessed);
+  console.log(lettersGuessed.join(""));
   console.log(computerGuess);
-  if (userKey == computerGuess) {
-    console.log("it a match");
+  if (lettersGuessed.join("") === computerGuess) {
+    console.log("congrats you win");
   }
 
   document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
